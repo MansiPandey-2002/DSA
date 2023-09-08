@@ -225,12 +225,6 @@ int main()
         if(ch!=1)
             break;
     }
-    display(tail);
-    /*tail=del_last(tail);
-    printf("\nafter del\n");
-    display(tail);*/
-    c=count(tail);
-    printf("\ncount is %d",c);
-    return 0;
+   //other functions can be added
 }
     
