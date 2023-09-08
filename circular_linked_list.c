@@ -1,4 +1,4 @@
-//cll
+//CIRCULAR LINKED LIST INTERNAL IMPLEMENTATIONS
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -8,6 +8,9 @@ typedef struct node
     struct node *next;
 }node;
 
+//1=> INSERTION
+
+//1.1-->Insertion in a Circular Linked List from rear side
 node* insert_last(node *tail,int elem)
 {
     node *p=(node*)malloc(sizeof(node));
@@ -27,6 +30,7 @@ node* insert_last(node *tail,int elem)
     return tail;
 }
 
+//1.2-->Insertion in a Circular Linked List from front side
 node* insert_first(node *tail,int elem)
 {
     node *p=(node*)malloc(sizeof(node));
@@ -45,6 +49,9 @@ node* insert_first(node *tail,int elem)
     return tail;
 }
 
+//2=> DELETION
+
+//2.1-->Deletion in a Circular Linked List from front side
 node* del_first(node *tail)
 {
     node *p=tail->next;
@@ -62,6 +69,7 @@ node* del_first(node *tail)
     return tail;
 }
 
+//2.2-->Deletion in a Circular Linked List from rear side
 /*node* del_last(node *tail)
 {
     node *p=tail->next;
