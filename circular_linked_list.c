@@ -187,6 +187,18 @@ node* search_del(node *tail,int key)
     return tail;
 }
 
+//3=> DISPLAY
+void display(node *tail)
+{
+    node *p=tail->next;
+    do
+    {
+        printf("%d ",p->info);
+        p=p->next;
+    } while (p!=tail->next);
+}
+ 
+
 //4=>Extra Funtions
 
 //4.1--> Count number of nodes in Circularl Linked List
@@ -203,17 +215,6 @@ int count(node *tail)
     return c;
 }
 
-
-void display(node *tail)
-{
-    node *p=tail->next;
-    do
-    {
-        printf("%d ",p->info);
-        p=p->next;
-    } while (p!=tail->next);
-}
- 
 
 
 int main()
