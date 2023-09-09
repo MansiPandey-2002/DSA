@@ -49,6 +49,45 @@ node* insert_first(node *tail,int elem)
     return tail;
 }
 
+//1.3-->Insertion in a Circular Linked List at a random position given by user 
+node* random_insert(node *tail,int key,int pos)
+{
+    node *temp=tail->next;
+    node *p=(node*)malloc(sizeof(node));
+    if(p!=NULL)
+    {
+        p->info=key;
+        p->next=p;
+        if(pos==1)
+        {
+            p->next=tail->next;
+            tail->next=p;
+        }
+        else
+        {
+            while(pos>2)
+            {
+                temp=temp->next;
+                pos--;
+            }
+            if(temp->next==NULL)
+            {
+                p->next=tail->next;
+                temp->next=p;
+                tail=p;
+            }
+            else
+            {
+                node *t1=temp->next;
+                p->next=temp->next;
+                temp->next=p;
+            }
+        }
+    } 
+    return tail;
+}
+
+
 //2=> DELETION
 
 //2.1-->Deletion in a Circular Linked List from front side
@@ -148,56 +187,9 @@ node* search_del(node *tail,int key)
     return tail;
 }
 
+//4=>Extra Funtions
 
-node* ran_insert(node *tail,int key,int pos)
-{
-    node *temp=tail->next;
-    node *p=(node*)malloc(sizeof(node));
-    if(p!=NULL)
-    {
-        p->info=key;
-        p->next=p;
-        if(pos==1)
-        {
-            p->next=tail->next;
-            tail->next=p;
-        }
-        else
-        {
-            while(pos>2)
-            {
-                temp=temp->next;
-                pos--;
-            }
-            if(temp->next==NULL)
-            {
-                p->next=tail->next;
-                temp->next=p;
-                tail=p;
-            }
-            else
-            {
-                node *t1=temp->next;
-                p->next=temp->next;
-                temp->next=p;
-            }
-        }
-    } 
-    return tail;
-}
-
-
-
-void display(node *tail)
-{
-    node *p=tail->next;
-    do
-    {
-        printf("%d ",p->info);
-        p=p->next;
-    } while (p!=tail->next);
-}
- 
+//4.1--> Count number of nodes in Circularl Linked List
  //count nodes
 int count(node *tail)
 {
@@ -210,6 +202,18 @@ int count(node *tail)
     } while (p!=tail->next);
     return c;
 }
+
+
+void display(node *tail)
+{
+    node *p=tail->next;
+    do
+    {
+        printf("%d ",p->info);
+        p=p->next;
+    } while (p!=tail->next);
+}
+ 
 
 
 int main()
