@@ -69,8 +69,8 @@ node* del_first(node *tail)
     return tail;
 }
 
-//2.2-->Deletion in a Circular Linked List from rear side
-/*node* del_last(node *tail)
+//2.2-->Deletion in a Circular Linked List from rear side [Method 1]
+node* delete_last(node *tail)
 {
     node *p=tail->next;
     node *p2=NULL;
@@ -92,9 +92,9 @@ node* del_first(node *tail)
         p2=NULL;
     }
     return tail;
-}*/
+}
 
-//other del_last way
+//2.3-->Deletion in a Circular Linked List from rear side [Method 2]
 node* del_last(node *tail)
 {
     node *temp=tail->next;
@@ -113,6 +113,38 @@ node* del_last(node *tail)
         free(t1);
         t1=NULL;
     }
+    return tail;
+}
+
+//2.4-->Deletion in a Circular Linked List at a particular node given by user
+node* search_del(node *tail,int key)
+{
+    node *temp=tail->next;
+    do
+    {
+        if(temp->info==key)
+        {
+            if(tail->next=tail)
+            {
+                free(tail);
+                tail=NULL;
+                break; //else loop continues for segmentaion fault
+            }
+            else
+            {
+                node *t1=tail->next;
+                node *t2=temp;
+                while(t1->next!=temp)
+                    t1=t1->next;
+                t1->next=temp->next;
+                temp=temp->next;
+                free(t2);
+                t2=NULL;
+                break;
+            }
+        }
+        temp=temp->next;
+    }while(temp!=tail->next);
     return tail;
 }
 
@@ -154,37 +186,6 @@ node* ran_insert(node *tail,int key,int pos)
     return tail;
 }
 
-
-node* search_del(node *tail,int key)
-{
-    node *temp=tail->next;
-    do
-    {
-        if(temp->info==key)
-        {
-            if(tail->next=tail)
-            {
-                free(tail);
-                tail=NULL;
-                break; //else loop continues for segmentaion fault
-            }
-            else
-            {
-                node *t1=tail->next;
-                node *t2=temp;
-                while(t1->next!=temp)
-                    t1=t1->next;
-                t1->next=temp->next;
-                temp=temp->next;
-                free(t2);
-                t2=NULL;
-                break;
-            }
-        }
-        temp=temp->next;
-    }while(temp!=tail->next);
-    return tail;
-}
 
 
 void display(node *tail)
