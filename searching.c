@@ -1,3 +1,8 @@
+//Header files to be included:->
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
 //1--> LINEAR  Search
 int linear(int a[],int n,int elem)
 {
