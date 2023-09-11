@@ -8,6 +8,8 @@ Welcome to the internal implementations of Data Structures and Algorithms (DSA) 
 - **Searching Techniques**
 - **Sorting Algorithms**
 - **Stacks**
+  - `stack.c`: Implementation of a stack (Creation, Insertion, Deletion, Display) in C.
+  - `queue.c`: Implementation of a queue (Creation, Insertion, Deletion, Display) in C.
 - **Queues**
 - **Linked List**
   - `linked_list.c`: Implementation of a singly linked list in C.
