@@ -79,3 +79,20 @@ int jump_search(int a[],int n,int elem)
     }
     return 0;
 }
+
+int main()
+{
+    int n,*a,elem;
+    printf("enter number of elements");
+    scanf("%d",&n);
+    a=(int*)malloc(n*sizeof(int));
+    for(int i=0;i<n;i++)
+    {
+        printf("enter element");
+        scanf("%d",&a[i]);
+    }
+    printf("\nEnter element to be searched");
+    scanf("%d",&elem);
+    //Apply any Searching Algorithm
+    return 0;
+}
