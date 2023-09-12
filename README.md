@@ -6,7 +6,9 @@ Welcome to the internal implementations of Data Structures and Algorithms (DSA) 
 ## Table of Contents
 
 - **Searching Techniques**
+  - `searching.c`: Implementation of all searching algorithms in C.
 - **Sorting Algorithms**
+  - `sorting.c`: Implementation of all sorting algorithms in C.
 - **Stacks**
   - `stack.c`: Implementation of a stack (Creation, Insertion, Deletion, Display) in C.
 - **Queues**
