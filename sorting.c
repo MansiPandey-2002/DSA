@@ -34,6 +34,8 @@ void selection(int *a,int n)
     }
 }
 
+
+
 //3-->INSERTION Sort
 void insertion(int *a,int n) 
 {
@@ -52,6 +54,35 @@ void insertion(int *a,int n)
     }
 }
 
+//4--> QUICK Sort
+void QuickSort(int arr[], int first, int last)
+{
+ int p,q,pivot,temp;
+ if(first<last)
+ {
+   pivot=first;
+   p=first;
+   q=last;
+   while(p<q)
+   {
+        while(arr[p]<=arr[pivot] && p<last)   // Move left while i(first) < pivot 
+            p++;
+        while(arr[q]>arr[pivot])               // Move right while j(last) > pivot 
+            q--;
+        if(p<q)
+        {
+            temp=arr[p];
+            arr[p]=arr[q];
+            arr[p]=temp; 
+        }
+   }
+   temp=arr[pivot];
+   arr[pivot]=arr[q];
+   arr[q]=temp;
+   QuickSort(arr,first,q-1);
+   QuickSort(arr,q+1,last);
+ }
+}
 
 
 //DISPLAY
