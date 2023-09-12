@@ -52,10 +52,31 @@ void insertion(int *a,int n)
     }
 }
 
+
+
 //DISPLAY
 void display(int a[],int n)
 {
     int i;
     for(i=0;i<n;i++)
         printf(" %d ",a[i]);
+}
+
+int main()
+{
+    int n,*a,elem;
+    printf("enter number of elements");
+    scanf("%d",&n);
+    a=(int*)malloc(n*sizeof(int));
+    for(int i=0;i<n;i++)
+    {
+        printf("enter elem");
+        scanf("%d",&a[i]);
+
+    }
+    printf("\nBefore");
+    display(a,n);   //Before
+    //APPLY ANY SORTING TECHNIQUE HERE
+    printf("\nAfter");
+    display(a,n);   //After
 }
